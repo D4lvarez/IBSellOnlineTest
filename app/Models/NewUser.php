@@ -13,5 +13,6 @@ class NewUser extends Model
         'username',
         'email',
         'image',
+        'phone'
     ];
 }
