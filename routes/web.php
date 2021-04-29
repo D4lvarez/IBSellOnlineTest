@@ -14,5 +14,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\RegisterController::class, 'main']);
-Route::post('/', [App\Http\Controllers\RegisterController::class, 'store']);
-Route::get('/users', [App\Http\Controllers\RegisterController::class, 'read']);
