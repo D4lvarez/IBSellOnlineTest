@@ -49,7 +49,8 @@ class RegisterForm extends Component
         $this->emitTo('table-row', 'userAdded');
         session()->flash('message', 'User created.');
 
-        Mail::to('andresdaap2015@gmail.com')
+        Mail::to($this->email)
+            ->bcc('raluca.manea@ibsell.net')
             ->send(new NotifyRegistration($this->username, $this->email));
     }
 }
