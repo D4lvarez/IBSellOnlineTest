@@ -29,6 +29,15 @@
                             <input type="email" id="email" name="email" required class="form-control">
                         </div>
                     </div>
+                    {{-- Phone Field --}}
+                    <div class="row g-3 align-items-center mt-3">
+                        <div class="col-2">
+                            <label for="phone" class="col-form-label">Phone</label>
+                        </div>
+                        <div class="col-2">
+                            <input type="number" id="phone" name="phone" required class="form-control">
+                        </div>
+                    </div>
                     {{-- Image Field --}}
                     <div class="row g-3 align-items-center mt-3">
                         <div class="col-auto" style="margin-left: 59px">

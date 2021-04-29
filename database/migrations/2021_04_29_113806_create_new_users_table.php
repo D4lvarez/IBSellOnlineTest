@@ -17,6 +17,7 @@ class CreateNewUsersTable extends Migration
             $table->id();
             $table->string('username');
             $table->string('email')->unique();
+            $table->string('phone');
             $table->string('image');
             $table->timestamps();
         });

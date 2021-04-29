@@ -20,13 +20,15 @@ class RegisterController extends Controller
         $username = $request->username;
         $email = $request->email;
         $image = $request->imageUser;
+        $phone = $request->phone;
 
         $path = $image->store('media');
 
         $new_user = NewUser::create([
             'username' => $username,
             'email' => $email,
-            'image' => $path
+            'image' => $path,
+            'phone' => $phone,
         ]);
     }
 

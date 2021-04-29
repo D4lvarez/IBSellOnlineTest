@@ -1872,7 +1872,7 @@ function onSubmit(_x) {
 
 function _onSubmit() {
   _onSubmit = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(event) {
-    var username, email, typeFile, imageUser, data, response;
+    var username, email, phone, imageUser, allowedExtensions, data, response;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
@@ -1880,36 +1880,49 @@ function _onSubmit() {
             event.preventDefault();
             username = event.target.form.username.value;
             email = event.target.form.email.value;
+            phone = event.target.form.phone.value;
             imageUser = event.target.form.imageUser.files[0];
+            allowedExtensions = /(.jpg|.jpeg)$/i;
 
-            if (!(username === "" || email === "" || imageUser === "")) {
-              _context2.next = 7;
+            if (!(username === "" || email === "" || imageUser === "" || phone === "")) {
+              _context2.next = 9;
               break;
             }
 
             alert("Todos los campos deben ser llenados");
             return _context2.abrupt("return");
 
-          case 7:
+          case 9:
+            if (allowedExtensions.exec(event.target.form.imageUser.value)) {
+              _context2.next = 13;
+              break;
+            }
+
+            alert("Please upload file having extensions .jpeg/.jpg/ only.");
+            event.target.form.imageUser.value.value = "";
+            return _context2.abrupt("return");
+
+          case 13:
             data = new FormData();
             data.append("username", username);
             data.append("email", email);
+            data.append("phone", phone);
             data.append("imageUser", imageUser);
-            _context2.next = 13;
+            _context2.next = 20;
             return axios.post("/", data, {
               headers: {
                 "Content-Type": "multipart/form-data"
               }
             });
 
-          case 13:
+          case 20:
             response = _context2.sent;
             console.log(response);
             username = "";
             email = "";
             imageUser = "";
 
-          case 18:
+          case 25:
           case "end":
             return _context2.stop();
         }
