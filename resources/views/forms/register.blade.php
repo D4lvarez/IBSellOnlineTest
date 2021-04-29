@@ -58,6 +58,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Username</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
                 </tr>
             </thead>
             <tbody id="table-body">

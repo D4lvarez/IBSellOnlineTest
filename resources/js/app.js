@@ -57,6 +57,7 @@ async function refreshUsers() {
         <th scope="row">${item.id}</th>
         <td>${item.username}</td>
         <td>${item.email}</td>
+        <td>${item.phone}</td>
     </tr>`;
     });
 }

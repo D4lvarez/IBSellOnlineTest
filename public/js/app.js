@@ -1962,7 +1962,7 @@ function _refreshUsers() {
           case 8:
             newRow = table.insertRow();
             users.forEach(function (item) {
-              newRow.innerHTML = "<tr>\n        <th scope=\"row\">".concat(item.id, "</th>\n        <td>").concat(item.username, "</td>\n        <td>").concat(item.email, "</td>\n    </tr>");
+              newRow.innerHTML = "<tr>\n        <th scope=\"row\">".concat(item.id, "</th>\n        <td>").concat(item.username, "</td>\n        <td>").concat(item.email, "</td>\n        <td>").concat(item.phone, "</td>\n    </tr>");
             });
 
           case 10:
